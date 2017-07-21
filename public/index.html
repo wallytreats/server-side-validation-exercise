@@ -14,14 +14,14 @@
     <h1>Signup Here!</h1>
     <hr>
 
-    <form>
+    <form name="myForm" method="post" >
       <label>First Name</label>
-      <input id = "firstNameInput" type="text" name = "lastName" placeholder = "Enter First Name">
+      <input id="firstNameInput" type="text" name="fname" placeholder="Enter First Name" type="submit">
 
       <br>
 
       <label>Last Name</label>
-      <input id = "lastNameInput" type="text" name = "firstName" placeholder = "Enter Last Name">
+      <input id = "lastNameInput" type="text" name = "lname" placeholder="Enter Last Name">
 
       <br>
 
@@ -40,7 +40,7 @@
 
       <br>
 
-      <button type="button" id="submit">Sign Up</button>
+      <button type="button" id="submit" onclick="return validateForm()">Sign Up</button>
 
     </form>
 

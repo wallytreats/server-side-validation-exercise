@@ -5,6 +5,15 @@ $(document).ready(function(){
 $('#submit').click(function (event){
  event.preventDefault();
 
+  function validateForm() {
+    console.log('im here');
+      var x = document.forms["myForm"]["fname"].value
+  if (x == "") {
+      alert("FirstName must be filled out");
+      return false;
+    }
+  }
+
   let users = {
    firstName: $('#firstNameInput').val(),
    lastName: $('#lastNameInput').val(),
@@ -32,6 +41,7 @@ $('#submit').click(function (event){
   $.getJSON('/users')
     .done((results) => {
       for (var i = 0; i < results.length; i++) {
+
         let appendUser = {
           id: results[i].id,
           firstName: $('<h3>').text(results[i].firstname),
@@ -50,4 +60,5 @@ $('#submit').click(function (event){
         $('#userContainer').append('<hr />');
       }
     })
+
 }); //document ready closure
